@@ -15,6 +15,13 @@
 		4903B4A71E3273AA00AE99A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4903B4A51E3273AA00AE99A9 /* LaunchScreen.storyboard */; };
 		4903B4B21E3273AA00AE99A9 /* AddressBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4B11E3273AA00AE99A9 /* AddressBookTests.swift */; };
 		4903B4BD1E3276C500AE99A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4903B4BC1E3276C500AE99A9 /* Cartfile */; };
+		4903B4C01E32787000AE99A9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4BF1E32787000AE99A9 /* NetworkRequest.swift */; };
+		4903B4C31E3278DC00AE99A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C21E3278DC00AE99A9 /* Alamofire.framework */; };
+		4903B4C41E3278DC00AE99A9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C21E3278DC00AE99A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4903B4C71E3278E100AE99A9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */; };
+		4903B4C81E3278E100AE99A9 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4903B4CB1E327AFF00AE99A9 /* AddressBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4CA1E327AFF00AE99A9 /* AddressBookRequest.swift */; };
+		4903B4CD1E327B9800AE99A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4CC1E327B9800AE99A9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +33,21 @@
 			remoteInfo = AddressBook;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4903B4C51E3278DC00AE99A9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4903B4C81E3278E100AE99A9 /* SwiftyJSON.framework in Embed Frameworks */,
+				4903B4C41E3278DC00AE99A9 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4903B4961E3273AA00AE99A9 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +62,11 @@
 		4903B4B11E3273AA00AE99A9 /* AddressBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTests.swift; sourceTree = "<group>"; };
 		4903B4B31E3273AA00AE99A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4903B4BC1E3276C500AE99A9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		4903B4BF1E32787000AE99A9 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		4903B4C21E3278DC00AE99A9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		4903B4CA1E327AFF00AE99A9 /* AddressBookRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookRequest.swift; sourceTree = "<group>"; };
+		4903B4CC1E327B9800AE99A9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4903B4C71E3278E100AE99A9 /* SwiftyJSON.framework in Frameworks */,
+				4903B4C31E3278DC00AE99A9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +96,7 @@
 				4903B4981E3273AA00AE99A9 /* AddressBook */,
 				4903B4B01E3273AA00AE99A9 /* AddressBookTests */,
 				4903B4971E3273AA00AE99A9 /* Products */,
+				4903B4C91E3278E500AE99A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +112,7 @@
 		4903B4981E3273AA00AE99A9 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				4903B4BE1E32785D00AE99A9 /* Classes */,
 				4903B4991E3273AA00AE99A9 /* AppDelegate.swift */,
 				4903B49B1E3273AA00AE99A9 /* ViewController.swift */,
 				4903B49D1E3273AA00AE99A9 /* Main.storyboard */,
@@ -102,6 +133,25 @@
 			path = AddressBookTests;
 			sourceTree = "<group>";
 		};
+		4903B4BE1E32785D00AE99A9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4903B4BF1E32787000AE99A9 /* NetworkRequest.swift */,
+				4903B4CA1E327AFF00AE99A9 /* AddressBookRequest.swift */,
+				4903B4CC1E327B9800AE99A9 /* Constants.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4903B4C91E3278E500AE99A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */,
+				4903B4C21E3278DC00AE99A9 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +162,8 @@
 				4903B4921E3273AA00AE99A9 /* Sources */,
 				4903B4931E3273AA00AE99A9 /* Frameworks */,
 				4903B4941E3273AA00AE99A9 /* Resources */,
+				4903B4C11E32788500AE99A9 /* ShellScript */,
+				4903B4C51E3278DC00AE99A9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +255,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4903B4C11E32788500AE99A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4903B4921E3273AA00AE99A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,7 +280,10 @@
 			files = (
 				4903B4A21E3273AA00AE99A9 /* AddressBook.xcdatamodeld in Sources */,
 				4903B49C1E3273AA00AE99A9 /* ViewController.swift in Sources */,
+				4903B4C01E32787000AE99A9 /* NetworkRequest.swift in Sources */,
 				4903B49A1E3273AA00AE99A9 /* AppDelegate.swift in Sources */,
+				4903B4CB1E327AFF00AE99A9 /* AddressBookRequest.swift in Sources */,
+				4903B4CD1E327B9800AE99A9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +421,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2MC337ND56;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AddressBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Marc-Santos.AddressBook";
@@ -361,6 +438,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2MC337ND56;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AddressBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Marc-Santos.AddressBook";
@@ -418,6 +499,7 @@
 				4903B4B81E3273AA00AE99A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4903B4B91E3273AA00AE99A9 /* Build configuration list for PBXNativeTarget "AddressBookTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +508,7 @@
 				4903B4BB1E3273AA00AE99A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
