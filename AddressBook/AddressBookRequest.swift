@@ -12,9 +12,9 @@ import SwiftyJSON
 
 extension NetworkRequest {
     
-    class func getRandomUsers(numberOfUsers: Int) {
+    class func getRandomUsers(numberOfUsers: Int, successHandler: @escaping (_ json: JSON) -> Void) {
         
-        let randomUserBaseURL = "https://randomuser.me/api/?results="
+        let randomUserBaseURL = "https://randomuser.me/api/?nat=ca&results="
         
         let url = randomUserBaseURL.appending(String(numberOfUsers))
         
@@ -25,8 +25,8 @@ extension NetworkRequest {
         Alamofire.request(request).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
+                
+                successHandler(JSON(value))
             case .failure(let error):
                 print(error)
             }
