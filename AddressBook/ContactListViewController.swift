@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ContactListViewController.swift
 //  AddressBook
 //
 //  Created by Marc Santos on 2017-01-20.
@@ -9,14 +9,17 @@
 import UIKit
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ContactListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView: UITableView = UITableView()
     var contacts : [Contact] = []
-
+    var selectedContact: Contact?
+    let detailsSegueIdentifier = "ContactDetails"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        lmao()
+        title = "Contacts"
+        getContacts()
         
         tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         tableView.delegate = self
@@ -31,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel!.text = contacts[indexPath.row].first
         return cell
     }
@@ -39,39 +42,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(contacts[indexPath.row].first!)
+        selectedContact = contacts[indexPath.row]
+        performSegue(withIdentifier: detailsSegueIdentifier, sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == detailsSegueIdentifier {
+            let detailsVC = segue.destination as! ContactDetailsViewController
+            detailsVC.selectedContact = selectedContact
+        }
+        
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func lmao() {
+    func getContacts() {
         NetworkRequest.getRandomUsers(numberOfUsers: 3, successHandler: { (json: JSON) in
             for i in 0..<json["results"].count {
                 let result = json["results"][i]
@@ -93,13 +76,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 contact.gender = result["gender"].string
                 contact.dob = result["dob"].string
                 
-                print(contact.first)
                 //(UIApplication.shared.delegate as! AppDelegate).saveContext()
             }
             do {
                 self.contacts = try (UIApplication.shared.delegate as!  AppDelegate).persistentContainer.viewContext.fetch(Contact.fetchRequest())
             } catch {
-                print("failed")
+                print("Failed to retrieve contacts")
             }
             
             self.tableView.reloadData()
