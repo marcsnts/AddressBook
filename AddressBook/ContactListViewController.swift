@@ -61,19 +61,19 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 let contact = Contact(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
                 let location = result["location"]
-                contact.city = location["city"].string
-                contact.postcode =  location["postcode"].string
-                contact.state = location["state"].string
-                contact.street = location["street"].string
+                contact.city = location["city"].string?.capitalized
+                contact.postcode =  location["postcode"].string?.capitalized
+                contact.state = location["state"].string?.capitalized
+                contact.street = location["street"].string?.capitalized
                 
                 let name = result["name"]
-                contact.title = name["title"].string
-                contact.first = name["first"].string
-                contact.last = name["last"].string
+                contact.title = name["title"].string?.capitalized
+                contact.first = name["first"].string?.capitalized
+                contact.last = name["last"].string?.capitalized
                 
                 contact.phone = result["phone"].string
                 contact.cell = result["cell"].string
-                contact.gender = result["gender"].string
+                contact.gender = result["gender"].string?.capitalized
                 contact.dob = result["dob"].string
                 
                 //(UIApplication.shared.delegate as! AppDelegate).saveContext()
