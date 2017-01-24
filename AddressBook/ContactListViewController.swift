@@ -18,6 +18,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Contacts"
         getContacts()
         
@@ -35,13 +36,24 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel!.text = contacts[indexPath.row].first
+ 
+        let contact = contacts[indexPath.row]
+
+        if let picture = contact.picture {
+            let url = URL(string: picture)
+            let data = try? Data(contentsOf: url!)
+            cell.imageView?.image = UIImage(data: data!)
+        }
+        
+        if let first = contact.first, let last = contact.last {
+            cell.textLabel!.text = "\(first) \(last)"
+        }
+        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(contacts[indexPath.row].first!)
         selectedContact = contacts[indexPath.row]
         performSegue(withIdentifier: detailsSegueIdentifier, sender: self)
     }
@@ -60,6 +72,9 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
                 let result = json["results"][i]
                 
                 let contact = Contact(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                
+                contact.picture = result["picture"]["medium"].string
+                
                 let location = result["location"]
                 contact.city = location["city"].string?.capitalized
                 contact.postcode =  location["postcode"].string?.capitalized
