@@ -20,6 +20,11 @@ class ContactDetailsViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let first = selectedContact?.first, let last = selectedContact?.last {
+            title = "\(first) \(last)"
+        }
+        
         tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self

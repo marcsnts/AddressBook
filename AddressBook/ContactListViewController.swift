@@ -67,7 +67,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func getContacts() {
-        NetworkRequest.getRandomUsers(numberOfUsers: 3, successHandler: { (json: JSON) in
+        NetworkRequest.getRandomUsers(numberOfUsers: Constants.DEFAULT_NUMBER_CONTACTS, successHandler: { (json: JSON) in
             for i in 0..<json["results"].count {
                 let result = json["results"][i]
                 
