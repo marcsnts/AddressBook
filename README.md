@@ -6,7 +6,7 @@
 The purpose of this project is to demonstrate local storage and databases using Core Data, REST networking, dependancy managers.
 
 ## How to use
-- Clone project and press play
+Clone project and press play
 
 ## Completed features
 - Grabs user information from https://randomuser.me/ to populate contact list
