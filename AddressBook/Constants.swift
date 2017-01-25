@@ -10,6 +10,6 @@ import Foundation
 
 class Constants {
     
-    static let DEFAULT_NUMBER_CONTACTS = 10
+    static let DEFAULT_NUMBER_CONTACTS = 9
     
 }

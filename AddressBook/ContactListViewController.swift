@@ -15,7 +15,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
     var contacts : [Contact] = []
     var selectedContact: Contact?
     let detailsSegueIdentifier = "ContactDetails"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
