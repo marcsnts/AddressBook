@@ -8,7 +8,12 @@ The purpose of this project is to demonstrate local storage and databases using 
 ## How to use
 - Clone project and press play
 
-##TODO
+## Completed features
+- Grabs user information from https://randomuser.me/ to populate contact list
+- Loads pictures from randomuser API as profile pictures
+- Stores all contacts through core data local storage
+
+## TODO
 - Add seperators for contact list, seperate by last name
 - Add/remove contact button
 - More unit testing
