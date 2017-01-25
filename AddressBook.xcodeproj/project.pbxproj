@@ -13,7 +13,6 @@
 		4903B4A21E3273AA00AE99A9 /* AddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4A01E3273AA00AE99A9 /* AddressBook.xcdatamodeld */; };
 		4903B4A41E3273AA00AE99A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4903B4A31E3273AA00AE99A9 /* Assets.xcassets */; };
 		4903B4A71E3273AA00AE99A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4903B4A51E3273AA00AE99A9 /* LaunchScreen.storyboard */; };
-		4903B4B21E3273AA00AE99A9 /* AddressBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4B11E3273AA00AE99A9 /* AddressBookTests.swift */; };
 		4903B4BD1E3276C500AE99A9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4903B4BC1E3276C500AE99A9 /* Cartfile */; };
 		4903B4C01E32787000AE99A9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4BF1E32787000AE99A9 /* NetworkRequest.swift */; };
 		4903B4C31E3278DC00AE99A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C21E3278DC00AE99A9 /* Alamofire.framework */; };
@@ -22,6 +21,7 @@
 		4903B4C81E3278E100AE99A9 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4903B4CB1E327AFF00AE99A9 /* AddressBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4CA1E327AFF00AE99A9 /* AddressBookRequest.swift */; };
 		4903B4CD1E327B9800AE99A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903B4CC1E327B9800AE99A9 /* Constants.swift */; };
+		494354901E384CAE00B3903C /* CoreDataHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943548F1E384CAE00B3903C /* CoreDataHelperTests.swift */; };
 		49A5F6F21E365D4200E81154 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5F6F11E365D4200E81154 /* CoreDataHelper.swift */; };
 		49A5F6F41E367EF400E81154 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5F6F31E367EF400E81154 /* ContactDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,6 @@
 		4903B4A61E3273AA00AE99A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4903B4A81E3273AA00AE99A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4903B4AD1E3273AA00AE99A9 /* AddressBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4903B4B11E3273AA00AE99A9 /* AddressBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTests.swift; sourceTree = "<group>"; };
 		4903B4B31E3273AA00AE99A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4903B4BC1E3276C500AE99A9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		4903B4BF1E32787000AE99A9 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		4903B4C61E3278E100AE99A9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		4903B4CA1E327AFF00AE99A9 /* AddressBookRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookRequest.swift; sourceTree = "<group>"; };
 		4903B4CC1E327B9800AE99A9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4943548F1E384CAE00B3903C /* CoreDataHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelperTests.swift; sourceTree = "<group>"; };
 		49A5F6F11E365D4200E81154 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		49A5F6F31E367EF400E81154 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,8 +128,8 @@
 		4903B4B01E3273AA00AE99A9 /* AddressBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				4903B4B11E3273AA00AE99A9 /* AddressBookTests.swift */,
 				4903B4B31E3273AA00AE99A9 /* Info.plist */,
+				4943548F1E384CAE00B3903C /* CoreDataHelperTests.swift */,
 			);
 			path = AddressBookTests;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4903B4B21E3273AA00AE99A9 /* AddressBookTests.swift in Sources */,
+				494354901E384CAE00B3903C /* CoreDataHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

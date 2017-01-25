@@ -1,15 +1,16 @@
 //
-//  AddressBookTests.swift
-//  AddressBookTests
+//  CoreDataHelperTests.swift
+//  AddressBook
 //
-//  Created by Marc Santos on 2017-01-20.
+//  Created by Marc Santos on 2017-01-24.
 //  Copyright © 2017 Marc Santos. All rights reserved.
 //
 
+import CoreData
 import XCTest
 @testable import AddressBook
 
-class AddressBookTests: XCTestCase {
+class CoreDataHelperTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -31,6 +32,10 @@ class AddressBookTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testGetContext() {
+        XCTAssertEqual(CoreDataHelper.getContext(), (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
     }
     
 }
